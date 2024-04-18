@@ -31,6 +31,3 @@ dist-ssr
 !.yarn/sdks
 !.yarn/versions
 yarn.lock
-
-# Components
-src/Components
