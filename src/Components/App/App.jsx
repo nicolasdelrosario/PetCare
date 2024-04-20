@@ -1,4 +1,5 @@
 import './App.css'
+import 'boxicons'
 import Login from '../Login/Login'
 
 function App() {

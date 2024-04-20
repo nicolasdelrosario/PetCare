@@ -1,26 +1,29 @@
 import './Login.css'
-// import { useState } from 'react'
-function Login() {
-	// const [username, setUsername] = useState('')
-	// const [password, setPassword] = useState('')
+import { Link } from 'wouter'
 
+function Login() {
 	return (
 		<section className='min--100 grid place--center'>
 			<h1 className='section__title'>PetCare</h1>
 			<p className='section__subtitle'>Sign into your account</p>
 			<div className='container'>
-				<form className='form flex flex--column'>
+				<form className='form__login flex flex--column'>
 					<label>Email</label>
-					<input className='form__input' placeholder='Username' type='text' />
+					<input
+						className='form__input form__login-input'
+						placeholder='Username'
+						type='text'
+					/>
 					<label>Password</label>
 					<input
-						className='form__input'
+						className='form__input form__login-input'
 						placeholder='Password'
 						type='password'
 					/>
-					<button className='button' type='submit'>
-						Continue
-					</button>
+
+					<Link className='button' to='/home'>
+						Home
+					</Link>
 				</form>
 			</div>
 		</section>

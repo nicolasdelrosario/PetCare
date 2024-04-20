@@ -1,10 +1,12 @@
-.form {
+.form__login {
 	max-width: 320px;
 }
 
-.form__input {
-	font-size: var(--normal-font-size);
-	font-weight: 500;
-	margin: var(--mb-0-25) 0 var(--mb-2);
+.form__login-input {
 	padding: 0.75rem 1rem;
+	margin: var(--mb-0-25) 0 var(--mb-2);
+}
+
+.form__textarea {
+	margin-bottom: 1rem;
 }

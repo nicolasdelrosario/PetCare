@@ -1,0 +1,40 @@
+.nav__container {
+	width: calc(20vw + 2.5rem);
+	max-width: 220px;
+	box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.nav {
+	height: 100vh;
+	left: 0;
+	max-width: 220px;
+	position: fixed;
+	top: 0;
+	width: 20vw;
+	padding: 2rem 1.25rem;
+	z-index: var(--z-fixed);
+}
+
+.nav__title {
+	font-size: var(--h3-font-size);
+	font-weight: var(--font-semi-bold);
+	color: var(--title-color-dark);
+	margin-bottom: var(--mb-1-5);
+}
+
+.nav__list {
+	gap: 1.5rem;
+}
+
+.nav__link {
+	color: var(--title-color);
+	font-size: var(--normal-font-size);
+	font-weight: var(--font-medium);
+	transition: all 0.3s;
+}
+
+.nav__link:hover,
+.active__link {
+	color: var(--title-color-dark);
+	border-bottom: 1px solid var(--title-color-dark);
+}

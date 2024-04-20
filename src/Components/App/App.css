@@ -15,8 +15,8 @@
 	/* .5rem = 8px | 1rem = 16px */
 	--big-font-size: 2.75rem;
 	--h1-font-size: 1.5rem;
-	--h2-font-size: 1.25rem;
-	--h3-font-size: 1rem;
+	--h2-font-size: 1.35rem;
+	--h3-font-size: 1.25rem;
 	--normal-font-size: 0.938rem;
 	--small-font-size: 0.813rem;
 	--smaller-font-size: 0.75rem;
@@ -24,6 +24,7 @@
 
 	/* font weight */
 	--font-normal: 400;
+	--font-medium: 500;
 	--font-semi-bold: 600;
 	--font-bold: 700;
 
@@ -38,6 +39,11 @@
 	--mb-2-5: 2.5rem;
 	--mb-3: 3rem;
 	--mb-4: 4rem;
+
+	/* z index */
+	--z-tooltip: 10;
+	--z-fixed: 100;
+	--z-modal: 1000;
 }
 
 /* Response typography */
@@ -84,12 +90,25 @@ input {
 	outline: none;
 }
 
-input:focus {
+textarea {
+	border: 1px solid var(--text-color);
+	font-family: var(--font-family);
+	resize: none;
+}
+
+input:focus,
+textarea:focus {
 	outline: none;
+}
+
+select {
+	background: transparent;
+	border: none;
 }
 
 a {
 	text-decoration: none;
+	cursor: pointer;
 }
 
 button {
@@ -146,6 +165,10 @@ img {
 	display: grid;
 }
 
+.grid--columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
 .place--center {
 	place-content: center;
 }
@@ -168,6 +191,7 @@ img {
 	transition: all 0.3s;
 	font-size: var(--normal-font-size);
 	cursor: pointer;
+	text-align: center;
 }
 
 .button:hover {
@@ -183,6 +207,19 @@ img {
 	align-items: center;
 }
 
+/* form */
+.form__input-container {
+	justify-content: center;
+	min-width: 50%;
+}
+
+.form__input {
+	font-size: var(--normal-font-size);
+	font-weight: var(--font-medium);
+	margin: var(--mb-0-25) 0 var(--mb-0-5);
+	padding: 0.75rem 0.5rem;
+}
+
 /* for medium devices */
 @media screen and (min-width: 768px) {
 	.section {
@@ -194,6 +231,15 @@ img {
 	}
 
 	.container {
+		max-width: 1024px;
 		margin: 0 var(--mb-1-5);
+	}
+}
+
+/* for large devices */
+@media screen and (min-width: 1024px) {
+	.container {
+		max-width: 1024px;
+		margin: 0 auto;
 	}
 }
