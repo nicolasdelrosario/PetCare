@@ -47,6 +47,15 @@ function CreateModal({ createNewAppointment, activeModal, toggleModal }) {
 
 		createNewAppointment(appointmentCreated)
 
+		setAge('')
+		setDate('')
+		setHour('')
+		setOwnerName('')
+		setPetName('')
+		setPhoneNumber('')
+		setReason('')
+		setSex('')
+		setSpecies('')
 		toggleModal()
 	}
 
