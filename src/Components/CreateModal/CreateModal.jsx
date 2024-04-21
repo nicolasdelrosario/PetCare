@@ -74,7 +74,7 @@ function CreateModal({ createNewAppointment, activeModal, toggleModal }) {
 				<form className='form flex flex--column' onSubmit={validateForm}>
 					<div className='modal__grid grid'>
 						<div className='form__input-container flex flex--column'>
-							<label>Pet Name:</label>
+							<label>Pet&#39;s Name:</label>
 							<input
 								className='form__input'
 								type='text'

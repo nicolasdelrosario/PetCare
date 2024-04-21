@@ -94,21 +94,21 @@ function UpdateModal({
 				<form onSubmit={validateForm} className='flex flex--column'>
 					<div className='modal__grid grid'>
 						<div className='form__input-container flex flex--column'>
-							<p>Owner:</p>
-							<input
-								className='form__input'
-								type='text'
-								value={ownerName}
-								onChange={e => setOwnerName(e.target.value)}
-							/>
-						</div>
-						<div className='form__input-container flex flex--column'>
-							<p>Pet Name:</p>
+							<p>Pet&#39;s Name:</p>
 							<input
 								className='form__input'
 								type='text'
 								value={petName}
 								onChange={e => setPetName(e.target.value)}
+							/>
+						</div>
+						<div className='form__input-container flex flex--column'>
+							<p>Owner&#39;s Name:</p>
+							<input
+								className='form__input'
+								type='text'
+								value={ownerName}
+								onChange={e => setOwnerName(e.target.value)}
 							/>
 						</div>
 					</div>
