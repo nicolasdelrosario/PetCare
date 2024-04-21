@@ -1,6 +1,6 @@
 import './App.css'
 import 'boxicons'
-import Login from '../Login/Login'
+import Login from '../Components/Login/Login'
 
 function App() {
 	return (

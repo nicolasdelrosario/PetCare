@@ -1,5 +1,5 @@
 import { Route } from 'wouter'
-import App from '../App/App'
+import App from '../../App/App'
 import SignUp from '../SignUp/SignUp'
 import Home from '../Home/Home'
 import Appointments from '../Appointments/Appointments'

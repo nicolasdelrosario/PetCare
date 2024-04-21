@@ -1,6 +1,7 @@
 import './Appointments.css'
 import { useState } from 'react'
 import { Toaster, toast } from 'sonner'
+import useLocalStorage from '../../hooks/useLocalStorage'
 import Navigation from '../Navigation/Navigation'
 import CreateModalButton from '../CreateModalButton/CreateModalButton'
 import UpdateModal from '../UpdateModal.jsx/UpdateModal'
@@ -13,6 +14,10 @@ function Appointments() {
 	const [updateModal, setUpdateModal] = useState(false)
 	const [selectedAppointmentId, setSelectedAppointmentId] = useState(null)
 	const [selectedAppointment, setSelectedAppointment] = useState(null)
+	const [dataAppointments, setDataAppointments] = useLocalStorage(
+		'appointments',
+		[]
+	)
 
 	const toggleCreateModal = () => setCreateModal(!createModal)
 
@@ -25,8 +30,6 @@ function Appointments() {
 		setSelectedAppointment(appointment)
 		setUpdateModal(!updateModal)
 	}
-
-	const [dataAppointments, setDataAppointments] = useState([])
 
 	const createNewAppointment = appointment => {
 		const newAppointment = {
@@ -43,29 +46,25 @@ function Appointments() {
 			phoneNumber: appointment.phoneNumber,
 		}
 
-		setDataAppointments(prevAppointments => [
-			...prevAppointments,
-			newAppointment,
-		])
+		const updatedAppointments = [...dataAppointments, newAppointment]
+		setDataAppointments(updatedAppointments)
 
-		toast.success('Appointment Created Successfully', {
-			duration: 2500,
-		})
+		toast.success('Appointment Created Successfully', { duration: 2500 })
+		toggleCreateModal()
 	}
 
 	const deleteAnAppointment = () => {
 		if (selectedAppointmentId) {
-			const appointmentToDelete = dataAppointments.find(
-				appointment => appointment.id === selectedAppointmentId
+			const updatedAppointments = dataAppointments.map(appointment =>
+				appointment.id === selectedAppointmentId
+					? { ...appointment, appointmentStatus: false }
+					: appointment
 			)
-			appointmentToDelete.appointmentStatus = false
+			setDataAppointments(updatedAppointments)
 			setSelectedAppointmentId(null)
 		}
 
-		toast.success('Appointment Deleted Successfully', {
-			duration: 2500,
-		})
-
+		toast.success('Appointment Deleted Successfully', { duration: 2500 })
 		toggleDeleteModal()
 	}
 
@@ -106,7 +105,6 @@ function Appointments() {
 								></box-icon>
 
 								<h3 className='appointment__title'>{appointment.petName}</h3>
-								<p>{appointment.id}</p>
 								<p className='appointment__description'>
 									Owner: {appointment.ownerName}
 								</p>
