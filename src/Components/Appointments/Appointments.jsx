@@ -101,6 +101,7 @@ function Appointments() {
 								<box-icon
 									class='modal__close'
 									name='x'
+									color='gray'
 									onClick={() => toggleDeleteModal(appointment.id)}
 								></box-icon>
 
@@ -143,7 +144,7 @@ function Appointments() {
 					activeModal={deleteModal}
 					toggleModal={toggleDeleteModal}
 					title={'Are you sure you want to delete this appointment?'}
-					subtitle={'This action can not be undone'}
+					subtitle={'This action can be undone'}
 					message={'Delete Appointment'}
 				/>
 				<UpdateModal
