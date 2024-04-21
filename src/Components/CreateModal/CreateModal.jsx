@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import { toast } from 'sonner'
 function CreateModal({ createNewAppointment, activeModal, toggleModal }) {
 	const [age, setAge] = useState('')
 	const [date, setDate] = useState('')
@@ -12,9 +12,28 @@ function CreateModal({ createNewAppointment, activeModal, toggleModal }) {
 	const [species, setSpecies] = useState('')
 
 	const formattedDate = new Date(date).toLocaleDateString('en-US')
-
-	const handleSubmitAppointment = e => {
+	const validateForm = e => {
 		e.preventDefault()
+
+		if (
+			age.trim() === '' ||
+			date.trim() === '' ||
+			hour.trim() === '' ||
+			ownerName.trim() === '' ||
+			petName.trim() === '' ||
+			phoneNumber.trim() === '' ||
+			reason.trim() === '' ||
+			sex.trim() === '' ||
+			species.trim() === ''
+		) {
+			toast.error('Please fill out all required fields')
+			return
+		} else {
+			return handleSubmitAppointment(e)
+		}
+	}
+
+	const handleSubmitAppointment = () => {
 		const appointmentCreated = {
 			appointmentDate: formattedDate,
 			appointmentHour: hour,
@@ -44,10 +63,7 @@ function CreateModal({ createNewAppointment, activeModal, toggleModal }) {
 				<h3 className='modal__title'>Create a new appointment</h3>
 				<p className='modal__description'>please fill out this form</p>
 
-				<form
-					className='form flex flex--column'
-					onSubmit={handleSubmitAppointment}
-				>
+				<form className='form flex flex--column' onSubmit={validateForm}>
 					<div className='modal__grid grid'>
 						<div className='form__input-container flex flex--column'>
 							<label>Pet Name:</label>

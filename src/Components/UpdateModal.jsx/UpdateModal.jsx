@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { toast } from 'sonner'
 
 function UpdateModal({
 	updateAnAppointment,
@@ -30,8 +31,28 @@ function UpdateModal({
 		}
 	}, [appointment])
 
-	const handleUpdateAppointment = e => {
+	const validateForm = e => {
 		e.preventDefault()
+
+		if (
+			age.trim() === '' ||
+			date.trim() === '' ||
+			hour.trim() === '' ||
+			ownerName.trim() === '' ||
+			petName.trim() === '' ||
+			phoneNumber.trim() === '' ||
+			reason.trim() === '' ||
+			sex.trim() === '' ||
+			species.trim() === ''
+		) {
+			toast.error('Fields cannot be empty.')
+			return
+		} else {
+			return handleUpdateAppointment()
+		}
+	}
+
+	const handleUpdateAppointment = () => {
 		const appointmentUpdated = {
 			id: appointment.id,
 			appointmentDate: date,
@@ -71,7 +92,7 @@ function UpdateModal({
 					onClick={handleCloseModal}
 				></box-icon>
 				<h3 className='modal__title'>Appointment Details</h3>
-				<form onSubmit={handleUpdateAppointment} className='flex flex--column'>
+				<form onSubmit={validateForm} className='flex flex--column'>
 					<div className='modal__grid grid'>
 						<div className='form__input-container flex flex--column'>
 							<p>Owner:</p>
