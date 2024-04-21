@@ -1,0 +1,8 @@
+.form__signup {
+	max-width: 320px;
+}
+
+.form__signup-input {
+	padding: 0.75rem 1rem;
+	margin: var(--mb-0-25) 0 var(--mb-2);
+}
