@@ -50,14 +50,14 @@
 
 /* for medium devices */
 @media screen and (min-width: 768px) {
-	.history__container {
+	.histories__container {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 /* for large devices */
 @media screen and (min-width: 1280px) {
-	.history__container {
+	.histories__container {
 		grid-template-columns: repeat(3, 1fr);
 		gap: 3rem;
 		justify-content: center;

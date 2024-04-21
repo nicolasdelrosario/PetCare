@@ -45,8 +45,7 @@ function UpdateModal({
 			sex.trim() === '' ||
 			species.trim() === ''
 		) {
-			toast.error('Fields cannot be empty.')
-			return
+			return toast.error('Fields cannot be empty.')
 		} else {
 			return handleUpdateAppointment()
 		}
@@ -175,7 +174,7 @@ function UpdateModal({
 					</div>
 					<p>Reason:</p>
 					<textarea
-						className='form__input'
+						className='form__input form__textarea'
 						value={reason}
 						onChange={e => setReason(e.target.value)}
 						cols='30'

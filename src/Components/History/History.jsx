@@ -41,34 +41,42 @@ function History() {
 			<div className='histories section'>
 				<h1 className='section__title'>History</h1>
 				<p className='section__subtitle'>Previous Appointments</p>
-				<div className='histories__container container grid justify-i-center'>
-					{dataAppointments
-						.filter(appointment => !appointment.appointmentStatus)
-						.map(appointment => (
-							<div key={appointment.id} className='history'>
-								<box-icon
-									class='modal__close'
-									name='rotate-right'
-									color='gray'
-									onClick={() => toggleRecoverModal(appointment.id)}
-								></box-icon>
+				{dataAppointments.every(
+					appointment => appointment.appointmentStatus
+				) ? (
+					<h2 className='text--center mt-6'>
+						There are no appointments in the history.
+					</h2>
+				) : (
+					<div className='histories__container container grid justify-i-center'>
+						{dataAppointments
+							.filter(appointment => !appointment.appointmentStatus)
+							.map(appointment => (
+								<div key={appointment.id} className='history'>
+									<box-icon
+										class='modal__close'
+										name='rotate-right'
+										color='gray'
+										onClick={() => toggleRecoverModal(appointment.id)}
+									></box-icon>
 
-								<h3 className='history__title'>{appointment.petName}</h3>
-								<p className='history__description'>
-									Owner: {appointment.ownerName}
-								</p>
-								<p className='history__description'>
-									Date:{' '}
-									{new Date(appointment.appointmentDate).toLocaleDateString(
-										'en-US'
-									)}
-								</p>
-								<p className='history__description'>
-									Hour: {appointment.appointmentHour}
-								</p>
-							</div>
-						))}
-				</div>
+									<h3 className='history__title'>{appointment.petName}</h3>
+									<p className='history__description'>
+										Owner: {appointment.ownerName}
+									</p>
+									<p className='history__description'>
+										Date:{' '}
+										{new Date(appointment.appointmentDate).toLocaleDateString(
+											'en-US'
+										)}
+									</p>
+									<p className='history__description'>
+										Hour: {appointment.appointmentHour}
+									</p>
+								</div>
+							))}
+					</div>
+				)}
 
 				<Modal
 					event={recoverAnAppointment}

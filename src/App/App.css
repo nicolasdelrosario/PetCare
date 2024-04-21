@@ -181,6 +181,10 @@ img {
 	text-align: center;
 }
 
+.mt-6 {
+	margin-top: 6rem;
+}
+
 /* buttons */
 .button {
 	display: inline-block;

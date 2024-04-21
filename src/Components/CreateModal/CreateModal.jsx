@@ -26,8 +26,7 @@ function CreateModal({ createNewAppointment, activeModal, toggleModal }) {
 			sex.trim() === '' ||
 			species.trim() === ''
 		) {
-			toast.error('Please fill out all required fields')
-			return
+			return toast.error('Please fill out all required fields')
 		} else {
 			return handleSubmitAppointment(e)
 		}
