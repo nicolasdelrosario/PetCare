@@ -153,8 +153,8 @@ function CreateModal({ createNewAppointment, activeModal, toggleModal }) {
 					<textarea
 						className='form__input form__textarea'
 						placeholder='Reason'
-						cols='60'
-						rows='2'
+						cols='30'
+						rows='3'
 						value={reason}
 						onChange={e => setReason(e.target.value)}
 					></textarea>

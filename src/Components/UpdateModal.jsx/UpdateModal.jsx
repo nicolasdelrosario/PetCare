@@ -153,7 +153,13 @@ function UpdateModal({
 						</div>
 					</div>
 					<p>Reason:</p>
-					<p className='form__input'>{reason}</p>
+					<textarea
+						className='form__input'
+						value={reason}
+						onChange={e => setReason(e.target.value)}
+						cols='30'
+						rows='3'
+					></textarea>
 
 					<button className='button'>Save Changes</button>
 				</form>

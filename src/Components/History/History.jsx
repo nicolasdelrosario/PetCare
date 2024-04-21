@@ -30,7 +30,7 @@ function History() {
 			setSelectedAppointmentId(null)
 		}
 
-		toast.success('Appointment Deleted Successfully', { duration: 2500 })
+		toast.success('Appointment Recovered Successfully', { duration: 2500 })
 		toggleRecoverModal()
 	}
 
