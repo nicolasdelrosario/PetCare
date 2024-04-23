@@ -1,7 +1,11 @@
 import './CreateModalButton.css'
 import CreateModal from '../CreateModal/CreateModal'
 
-function CreateModalButton({ createNewAppointment, activeModal, toggleModal }) {
+export default function CreateModalButton({
+	createNewAppointment,
+	activeModal,
+	toggleModal,
+}) {
 	return (
 		<div>
 			<button className='create__user-button' onClick={toggleModal}>
@@ -20,5 +24,3 @@ function CreateModalButton({ createNewAppointment, activeModal, toggleModal }) {
 		</div>
 	)
 }
-
-export default CreateModalButton

@@ -1,11 +1,13 @@
 import './Appointments.css'
 import { useState } from 'react'
-import { Toaster, toast } from 'sonner'
+import { toast } from 'sonner'
 import useLocalStorage from '../../hooks/useLocalStorage'
-import Navigation from '../Navigation/Navigation'
-import CreateModalButton from '../CreateModalButton/CreateModalButton'
-import UpdateModal from '../UpdateModal.jsx/UpdateModal'
-import Modal from '../Modal/Modal'
+import {
+	Navigation,
+	CreateModalButton,
+	UpdateModal,
+	Modal,
+} from '../../Components'
 
 function Appointments() {
 	const [activeNav, setActiveNav] = useState('/home/appointments')
@@ -33,17 +35,9 @@ function Appointments() {
 
 	const createNewAppointment = appointment => {
 		const newAppointment = {
+			...appointment,
 			id: dataAppointments.length + 1,
-			appointmentDate: appointment.appointmentDate,
-			appointmentHour: appointment.appointmentHour,
-			appointmentReason: appointment.appointmentReason,
 			appointmentStatus: true,
-			ownerName: appointment.ownerName,
-			petAge: appointment.petAge,
-			petName: appointment.petName,
-			petSex: appointment.petSex,
-			petSpecies: appointment.petSpecies,
-			phoneNumber: appointment.phoneNumber,
 		}
 
 		const updatedAppointments = [...dataAppointments, newAppointment]
@@ -88,7 +82,6 @@ function Appointments() {
 
 	return (
 		<div className='flex'>
-			<Toaster expand={true} position='top-right' />
 			<Navigation activeNav={activeNav} setActiveNav={setActiveNav} />
 			<div className='appointments section'>
 				<h1 className='section__title'>Appointments</h1>

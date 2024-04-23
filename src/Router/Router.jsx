@@ -1,10 +1,10 @@
 import { Route } from 'wouter'
-import App from '../../App/App'
-import SignUp from '../SignUp/SignUp'
-import Home from '../Home/Home'
-import Appointments from '../Appointments/Appointments'
-import History from '../History/History'
-import Error from '../Error/Error'
+import App from '../App/App'
+import SignUp from '../pages/SignUp/SignUp'
+import Home from '../pages/Home/Home'
+import Appointments from '../pages/Appointments/Appointments'
+import History from '../pages/History/History'
+import Error from '../pages/Error/Error'
 
 function Router() {
 	return (

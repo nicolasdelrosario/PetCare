@@ -1,6 +1,13 @@
 import './Modal.css'
 
-function Modal({ event, activeModal, toggleModal, title, subtitle, message }) {
+export default function Modal({
+	event,
+	activeModal,
+	toggleModal,
+	title,
+	subtitle,
+	message,
+}) {
 	return (
 		<div className={activeModal ? 'modal active-modal' : 'modal'}>
 			<div className='modal__content'>
@@ -23,5 +30,3 @@ function Modal({ event, activeModal, toggleModal, title, subtitle, message }) {
 		</div>
 	)
 }
-
-export default Modal

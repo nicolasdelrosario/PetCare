@@ -10,12 +10,8 @@ function useLocalStorage(key, initialValue) {
 		}
 	})
 	const setValue = value => {
-		try {
-			setStoredValue(value)
-			window.localStorage.setItem(key, JSON.stringify(value))
-		} catch (error) {
-			console.error(error)
-		}
+		setStoredValue(value)
+		window.localStorage.setItem(key, JSON.stringify(value))
 	}
 
 	return [storedValue, setValue]

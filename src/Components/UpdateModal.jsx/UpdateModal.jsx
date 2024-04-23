@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
 
-function UpdateModal({
+export default function UpdateModal({
 	updateAnAppointment,
 	appointment,
 	activeModal,
@@ -187,5 +187,3 @@ function UpdateModal({
 		</div>
 	)
 }
-
-export default UpdateModal

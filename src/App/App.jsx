@@ -1,13 +1,11 @@
 import './App.css'
 import 'boxicons'
-import Login from '../Components/Login/Login'
+import Login from '../pages/Login/Login'
 
-function App() {
+export default function App() {
 	return (
 		<>
 			<Login />
 		</>
 	)
 }
-
-export default App

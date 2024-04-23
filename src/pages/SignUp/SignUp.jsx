@@ -2,7 +2,7 @@ import './SignUp.css'
 import { useState } from 'react'
 import useLocalStorage from '../../hooks/useLocalStorage'
 import { Link } from 'wouter'
-import { Toaster, toast } from 'sonner'
+import { toast } from 'sonner'
 
 function SignUp() {
 	const [username, setUsername] = useState('')
@@ -37,7 +37,6 @@ function SignUp() {
 
 	return (
 		<section className='min--100 grid place--center'>
-			<Toaster expand={true} position='top-right' />
 			<h1 className='section__title'>PetCare</h1>
 			<p className='section__subtitle'>Create a new account</p>
 			<div className='container'>

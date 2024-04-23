@@ -1,7 +1,7 @@
 import { Link } from 'wouter'
 import './Navigation.css'
 
-function Navigation({ activeNav, setActiveNav }) {
+export default function Navigation({ activeNav, setActiveNav }) {
 	const toggleNav = url => setActiveNav(url)
 
 	return (
@@ -53,5 +53,3 @@ function Navigation({ activeNav, setActiveNav }) {
 		</div>
 	)
 }
-
-export default Navigation

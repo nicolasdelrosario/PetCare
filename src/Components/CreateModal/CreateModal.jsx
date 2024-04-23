@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import { toast } from 'sonner'
-function CreateModal({ createNewAppointment, activeModal, toggleModal }) {
+export default function CreateModal({
+	createNewAppointment,
+	activeModal,
+	toggleModal,
+}) {
 	const [age, setAge] = useState('')
 	const [date, setDate] = useState('')
 	const [hour, setHour] = useState('')
@@ -191,5 +195,3 @@ function CreateModal({ createNewAppointment, activeModal, toggleModal }) {
 		</div>
 	)
 }
-
-export default CreateModal

@@ -1,9 +1,8 @@
 import './History.css'
 import { useState } from 'react'
-import { Toaster, toast } from 'sonner'
+import { toast } from 'sonner'
 import useLocalStorage from '../../hooks/useLocalStorage'
-import Navigation from '../Navigation/Navigation'
-import Modal from '../Modal/Modal'
+import { Navigation, Modal } from '../../Components'
 
 function History() {
 	const [activeNav, setActiveNav] = useState('/home/history')
@@ -36,7 +35,6 @@ function History() {
 
 	return (
 		<section className='flex'>
-			<Toaster expand={true} position='top-right' />
 			<Navigation activeNav={activeNav} setActiveNav={setActiveNav} />
 			<div className='histories section'>
 				<h1 className='section__title'>History</h1>

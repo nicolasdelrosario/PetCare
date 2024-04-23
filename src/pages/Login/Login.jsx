@@ -1,7 +1,7 @@
 import './Login.css'
 import { useState } from 'react'
 import useLocalStorage from '../../hooks/useLocalStorage'
-import { toast, Toaster } from 'sonner'
+import { toast } from 'sonner'
 import { Link, Redirect } from 'wouter'
 
 function Login() {
@@ -37,7 +37,6 @@ function Login() {
 
 	return (
 		<section className='min--100 grid place--center'>
-			<Toaster expand={true} position='top-right' />
 			<h1 className='section__title'>PetCare</h1>
 			<p className='section__subtitle'>Sign into your account</p>
 			<div className='container'>

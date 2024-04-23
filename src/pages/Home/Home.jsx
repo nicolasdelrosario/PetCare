@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './Home.css'
-import Navigation from '../Navigation/Navigation'
+import { Navigation } from '../../Components'
 
 function Home() {
 	const [activeNav, setActiveNav] = useState('/home')
