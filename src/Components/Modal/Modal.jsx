@@ -1,4 +1,4 @@
-import './Modal.css'
+import styles from './modal.module.css'
 
 export default function Modal({
 	event,
@@ -9,18 +9,20 @@ export default function Modal({
 	message,
 }) {
 	return (
-		<div className={activeModal ? 'modal active-modal' : 'modal'}>
-			<div className='modal__content'>
+		<div
+			className={`${styles.modal} ${activeModal ? styles.active__modal : ''}`}
+		>
+			<div className={styles.modal__content}>
 				<box-icon
-					class='modal__close'
+					class={styles.modal__close}
 					name='x'
 					onClick={() => toggleModal()}
 				></box-icon>
 
-				<h3 className='modal__title'>{title}</h3>
-				<p className='modal__description'>{subtitle}</p>
+				<h3 className={styles.modal__title}>{title}</h3>
+				<p className={styles.modal__description}>{subtitle}</p>
 				<button
-					className='modal__button button'
+					className={`${styles.modal__button} button`}
 					type='submit'
 					onClick={() => event()}
 				>

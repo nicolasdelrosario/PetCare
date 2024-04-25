@@ -48,6 +48,15 @@
 	transform: translateX(0.25rem);
 }
 
+.modal__close {
+	position: absolute;
+	top: 1.5rem;
+	right: 1.5rem;
+	font-size: 1.5rem;
+	color: var(--title-color);
+	cursor: pointer;
+}
+
 /* for medium devices */
 @media screen and (min-width: 768px) {
 	.histories__container {

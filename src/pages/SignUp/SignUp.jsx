@@ -1,4 +1,4 @@
-import './SignUp.css'
+import styles from './signup.module.css'
 import { useState } from 'react'
 import useLocalStorage from '../../hooks/useLocalStorage'
 import { Link } from 'wouter'
@@ -41,12 +41,12 @@ function SignUp() {
 			<p className='section__subtitle'>Create a new account</p>
 			<div className='container'>
 				<form
-					className='form__signup flex flex--column'
+					className={`${styles.form__signup} flex flex--column `}
 					onSubmit={validateForm}
 				>
 					<label>Username</label>
 					<input
-						className='form__input form__signup-input'
+						className={`${styles.form__input} ${styles.form__signup_input}`}
 						placeholder='Username'
 						type='text'
 						value={username}
@@ -54,7 +54,7 @@ function SignUp() {
 					/>
 					<label>Password</label>
 					<input
-						className='form__input form__signup-input'
+						className={`${styles.form__input} ${styles.form__signup_input}`}
 						placeholder='Password'
 						type='password'
 						value={password}
