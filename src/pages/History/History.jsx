@@ -1,4 +1,4 @@
-import './History.css'
+import styles from './history.module.css'
 import { useState } from 'react'
 import { toast } from 'sonner'
 import useLocalStorage from '../../hooks/useLocalStorage'
@@ -36,7 +36,7 @@ function History() {
 	return (
 		<section className='flex'>
 			<Navigation activeNav={activeNav} setActiveNav={setActiveNav} />
-			<div className='histories section'>
+			<div className={`${styles.histories} section`}>
 				<h1 className='section__title'>History</h1>
 				<p className='section__subtitle'>Previous Appointments</p>
 				{dataAppointments.every(
@@ -46,29 +46,33 @@ function History() {
 						There are no appointments in the history.
 					</h2>
 				) : (
-					<div className='histories__container container grid justify-i-center'>
+					<div
+						className={`${styles.histories__container} container grid justify-i-center`}
+					>
 						{dataAppointments
 							.filter(appointment => !appointment.appointmentStatus)
 							.map(appointment => (
-								<div key={appointment.id} className='history'>
+								<div key={appointment.id} className={styles.history}>
 									<box-icon
-										class='modal__close'
+										class={styles.modal__close}
 										name='rotate-right'
 										color='gray'
 										onClick={() => toggleRecoverModal(appointment.id)}
 									></box-icon>
 
-									<h3 className='history__title'>{appointment.petName}</h3>
-									<p className='history__description'>
+									<h3 className={styles.history__title}>
+										{appointment.petName}
+									</h3>
+									<p className={styles.history__description}>
 										Owner: {appointment.ownerName}
 									</p>
-									<p className='history__description'>
+									<p className={styles.history__description}>
 										Date:{' '}
 										{new Date(appointment.appointmentDate).toLocaleDateString(
 											'en-US'
 										)}
 									</p>
-									<p className='history__description'>
+									<p className={styles.history__description}>
 										Hour: {appointment.appointmentHour}
 									</p>
 								</div>

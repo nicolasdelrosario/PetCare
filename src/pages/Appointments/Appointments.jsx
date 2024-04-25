@@ -1,4 +1,4 @@
-import './Appointments.css'
+import styles from './appointments.module.css'
 import { useState } from 'react'
 import { toast } from 'sonner'
 import useLocalStorage from '../../hooks/useLocalStorage'
@@ -83,7 +83,7 @@ function Appointments() {
 	return (
 		<div className='flex'>
 			<Navigation activeNav={activeNav} setActiveNav={setActiveNav} />
-			<div className='appointments section'>
+			<div className={`${styles.appointments} section`}>
 				<h1 className='section__title'>Appointments</h1>
 				<p className='section__subtitle'>Upcoming</p>
 				{dataAppointments.every(
@@ -93,40 +93,44 @@ function Appointments() {
 						There are no upcoming appointments
 					</h2>
 				) : (
-					<div className='appointments__container container grid justify-i-center'>
+					<div
+						className={`${styles.appointments__container} container grid justify-i-center`}
+					>
 						{dataAppointments
 							.filter(appointment => appointment.appointmentStatus)
 							.map(appointment => (
-								<div key={appointment.id} className='appointment'>
+								<div key={appointment.id} className={styles.appointment}>
 									<box-icon
-										class='modal__close'
+										class={styles.modal__close}
 										name='x'
 										color='gray'
 										onClick={() => toggleDeleteModal(appointment.id)}
 									></box-icon>
 
-									<h3 className='appointment__title'>{appointment.petName}</h3>
-									<p className='appointment__description'>
+									<h3 className={styles.appointment__title}>
+										{appointment.petName}
+									</h3>
+									<p className={styles.appointment__description}>
 										Owner: {appointment.ownerName}
 									</p>
-									<p className='appointment__description'>
+									<p className={styles.appointment__description}>
 										Date:{' '}
 										{new Date(appointment.appointmentDate).toLocaleDateString(
 											'en-US'
 										)}
 									</p>
-									<p className='appointment__description'>
+									<p className={styles.appointment__description}>
 										Hour: {appointment.appointmentHour}
 									</p>
 
 									<span
-										className='appointment__button'
+										className={styles.appointment__button}
 										onClick={() => toggleUpdateModal(appointment)}
 									>
 										Update
 										<box-icon
 											color='gray'
-											class='appointment__button-icon'
+											class={styles.appointment__button_icon}
 											name='right-arrow-alt'
 										></box-icon>
 									</span>

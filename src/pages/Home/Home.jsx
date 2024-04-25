@@ -1,5 +1,5 @@
+import styles from './home.module.css'
 import { useState } from 'react'
-import './Home.css'
 import { Navigation } from '../../Components'
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
 	return (
 		<div className='flex'>
 			<Navigation activeNav={activeNav} setActiveNav={setActiveNav} />
-			<div className='home grid place--center'>
+			<div className={`${styles.home} grid place--center`}>
 				<h1 className='section__title'>Hello, welcome back!</h1>
 				<p className='section__subtitle'>Are you looking for something?</p>
 			</div>

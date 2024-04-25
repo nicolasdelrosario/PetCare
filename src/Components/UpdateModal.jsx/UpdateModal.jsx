@@ -1,3 +1,4 @@
+import styles from '../Modal/modal.module.css'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
 
@@ -83,16 +84,18 @@ export default function UpdateModal({
 	}
 
 	return (
-		<div className={activeModal ? 'modal active-modal' : 'modal'}>
-			<div className='modal__content'>
+		<div
+			className={`${styles.modal} ${activeModal ? styles.active__modal : ''}`}
+		>
+			<div className={styles.modal__content}>
 				<box-icon
-					class='modal__close'
+					class={styles.modal__close}
 					name='x'
 					onClick={handleCloseModal}
 				></box-icon>
-				<h3 className='modal__title'>Appointment Details</h3>
+				<h3 className={styles.modal__title}>Appointment Details</h3>
 				<form onSubmit={validateForm} className='flex flex--column'>
-					<div className='modal__grid grid'>
+					<div className={`${styles.modal__grid} grid`}>
 						<div className='form__input-container flex flex--column'>
 							<p>Pet&#39;s Name:</p>
 							<input
@@ -112,7 +115,7 @@ export default function UpdateModal({
 							/>
 						</div>
 					</div>
-					<div className='modal__grid grid'>
+					<div className={`${styles.modal__grid} grid`}>
 						<div className='form__input-container flex flex--column'>
 							<p>Phone Number:</p>
 							<input
@@ -132,7 +135,7 @@ export default function UpdateModal({
 							/>
 						</div>
 					</div>
-					<div className='modal__grid grid'>
+					<div className={`${styles.modal__grid} grid`}>
 						<div className='form__input-container flex flex--column'>
 							<p>Species:</p>
 							<input
@@ -152,7 +155,7 @@ export default function UpdateModal({
 							/>
 						</div>
 					</div>
-					<div className='modal__grid grid'>
+					<div className={`${styles.modal__grid} grid`}>
 						<div className='form__input-container flex flex--column'>
 							<p>Hour:</p>
 							<input

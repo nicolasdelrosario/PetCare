@@ -1,3 +1,4 @@
+import styles from '../Modal/modal.module.css'
 import { useState } from 'react'
 import { toast } from 'sonner'
 export default function CreateModal({
@@ -64,19 +65,21 @@ export default function CreateModal({
 	}
 
 	return (
-		<div className={activeModal ? 'modal active-modal' : 'modal'}>
-			<div className='modal__content'>
+		<div
+			className={`${styles.modal} ${activeModal ? styles.active__modal : ''}`}
+		>
+			<div className={styles.modal__content}>
 				<box-icon
-					class='modal__close'
+					class={styles.modal__close}
 					name='x'
 					onClick={toggleModal}
 				></box-icon>
 
-				<h3 className='modal__title'>Create a new appointment</h3>
-				<p className='modal__description'>please fill out this form</p>
+				<h3 className={styles.modal__title}>Create a new appointment</h3>
+				<p className={styles.modal__description}>please fill out this form</p>
 
-				<form className='form flex flex--column' onSubmit={validateForm}>
-					<div className='modal__grid grid'>
+				<form className='flex flex--column' onSubmit={validateForm}>
+					<div className={`${styles.modal__grid} grid`}>
 						<div className='form__input-container flex flex--column'>
 							<label>Pet&#39;s Name:</label>
 							<input
@@ -99,7 +102,7 @@ export default function CreateModal({
 						</div>
 					</div>
 
-					<div className='modal__grid grid'>
+					<div className={`${styles.modal__grid} grid`}>
 						<div className='form__input-container flex flex--column'>
 							<label>Phone Number: </label>
 							<input
@@ -132,7 +135,7 @@ export default function CreateModal({
 						</div>
 					</div>
 
-					<div className='modal__grid grid'>
+					<div className={`${styles.modal__grid} grid`}>
 						<div className='form__input-container flex flex--column'>
 							<label>Species: </label>
 							<input
@@ -155,7 +158,7 @@ export default function CreateModal({
 						</div>
 					</div>
 
-					<div className='modal__grid grid'>
+					<div className={`${styles.modal__grid} grid`}>
 						<div className='form__input-container flex flex--column'>
 							<label>Hour: </label>
 							<input
@@ -179,7 +182,7 @@ export default function CreateModal({
 
 					<label>Reason:</label>
 					<textarea
-						className='form__input form__textarea'
+						className='form__input'
 						placeholder='Reason'
 						cols='30'
 						rows='3'

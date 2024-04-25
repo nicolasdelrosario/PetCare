@@ -1,4 +1,4 @@
-import './Login.css'
+import styles from './login.module.css'
 import { useState } from 'react'
 import useLocalStorage from '../../hooks/useLocalStorage'
 import { toast } from 'sonner'
@@ -40,10 +40,13 @@ function Login() {
 			<h1 className='section__title'>PetCare</h1>
 			<p className='section__subtitle'>Sign into your account</p>
 			<div className='container'>
-				<form className='form__login flex flex--column' onSubmit={validateForm}>
+				<form
+					className={`${styles.form__login} flex flex--column`}
+					onSubmit={validateForm}
+				>
 					<label>Username</label>
 					<input
-						className='form__input form__login-input'
+						className={`${styles.form__input} ${styles.form__login_input}`}
 						placeholder='Username'
 						type='text'
 						value={username}
@@ -51,7 +54,7 @@ function Login() {
 					/>
 					<label>Password</label>
 					<input
-						className='form__input form__login-input'
+						className={`${styles.form__input} ${styles.form__login_input}`}
 						placeholder='Password'
 						type='password'
 						value={password}
