@@ -1,6 +1,7 @@
 import styles from '../Modal/modal.module.css'
 import { useState } from 'react'
 import { toast } from 'sonner'
+import Field from '../Field/Field'
 export default function CreateModal({
 	createNewAppointment,
 	activeModal,
@@ -80,39 +81,32 @@ export default function CreateModal({
 
 				<form className='flex flex--column' onSubmit={validateForm}>
 					<div className={`${styles.modal__grid} grid`}>
-						<div className='form__input-container flex flex--column'>
-							<label>Pet&#39;s Name:</label>
-							<input
-								className='form__input'
-								type='text'
-								placeholder='Name'
-								value={petName}
-								onChange={e => setPetName(e.target.value)}
-							/>
-						</div>
-						<div className='form__input-container flex flex--column'>
-							<label>Owner&#39;s Name:</label>
-							<input
-								className='form__input'
-								type='text'
-								placeholder="Owner's Name"
-								value={ownerName}
-								onChange={e => setOwnerName(e.target.value)}
-							/>
-						</div>
+						<Field
+							label='Pet&#39;s Name:'
+							placeholder='Name'
+							type='text'
+							value={petName}
+							onChange={e => setPetName(e.target.value)}
+						/>
+
+						<Field
+							label='Owner&#39;s Name:'
+							placeholder="Owner's Name"
+							type='text'
+							value={ownerName}
+							onChange={e => setOwnerName(e.target.value)}
+						/>
 					</div>
 
 					<div className={`${styles.modal__grid} grid`}>
-						<div className='form__input-container flex flex--column'>
-							<label>Phone Number: </label>
-							<input
-								className='form__input'
-								type='text'
-								placeholder='Phone Number'
-								value={phoneNumber}
-								onChange={e => setPhoneNumber(e.target.value)}
-							/>
-						</div>
+						<Field
+							label='Phone Number:'
+							placeholder='Phone Number'
+							type='text'
+							value={phoneNumber}
+							onChange={e => setPhoneNumber(e.target.value)}
+						/>
+
 						<div className='form__input-container flex flex--column'>
 							<label>Sex: </label>
 							<select
@@ -136,48 +130,39 @@ export default function CreateModal({
 					</div>
 
 					<div className={`${styles.modal__grid} grid`}>
-						<div className='form__input-container flex flex--column'>
-							<label>Species: </label>
-							<input
-								className='form__input'
-								type='text'
-								placeholder='Species'
-								value={species}
-								onChange={e => setSpecies(e.target.value)}
-							/>
-						</div>
-						<div className='form__input-container flex flex--column'>
-							<label>Age: </label>
-							<input
-								className='form__input'
-								type='text'
-								placeholder='Age'
-								value={age}
-								onChange={e => setAge(e.target.value)}
-							/>
-						</div>
+						<Field
+							label='Species: '
+							placeholder='Species'
+							type='text'
+							value={species}
+							onChange={e => setSpecies(e.target.value)}
+						/>
+
+						<Field
+							label='Age: '
+							placeholder='Age'
+							type='text'
+							value={age}
+							onChange={e => setAge(e.target.value)}
+						/>
 					</div>
 
 					<div className={`${styles.modal__grid} grid`}>
-						<div className='form__input-container flex flex--column'>
-							<label>Hour: </label>
-							<input
-								className='form__input'
-								type='time'
-								placeholder='Phone Number'
-								value={hour}
-								onChange={e => setHour(e.target.value)}
-							/>
-						</div>
-						<div className='form__input-container flex flex--column'>
-							<label>Date: </label>
-							<input
-								className='form__input'
-								type='date'
-								value={date}
-								onChange={e => setDate(e.target.value)}
-							/>
-						</div>
+						<Field
+							label='Hour: '
+							placeholder='Hour'
+							type='time'
+							value={hour}
+							onChange={e => setHour(e.target.value)}
+						/>
+
+						<Field
+							label='Date: '
+							placeholder='Date'
+							type='date'
+							value={date}
+							onChange={e => setDate(e.target.value)}
+						/>
 					</div>
 
 					<label>Reason:</label>
