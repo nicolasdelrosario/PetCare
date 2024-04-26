@@ -1,6 +1,7 @@
 import styles from '../Modal/modal.module.css'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
+import Field from '../Field/Field'
 
 export default function UpdateModal({
 	updateAnAppointment,
@@ -96,84 +97,84 @@ export default function UpdateModal({
 				<h3 className={styles.modal__title}>Appointment Details</h3>
 				<form onSubmit={validateForm} className='flex flex--column'>
 					<div className={`${styles.modal__grid} grid`}>
-						<div className='form__input-container flex flex--column'>
-							<p>Pet&#39;s Name:</p>
-							<input
-								className='form__input'
-								type='text'
-								value={petName}
-								onChange={e => setPetName(e.target.value)}
-							/>
-						</div>
-						<div className='form__input-container flex flex--column'>
-							<p>Owner&#39;s Name:</p>
-							<input
-								className='form__input'
-								type='text'
-								value={ownerName}
-								onChange={e => setOwnerName(e.target.value)}
-							/>
-						</div>
+						<Field
+							label='Pet&#39;s Name:'
+							placeholder='Name'
+							type='text'
+							value={petName}
+							onChange={e => setPetName(e.target.value)}
+						/>
+
+						<Field
+							label='Owner&#39;s Name:'
+							placeholder="Owner's Name"
+							type='text'
+							value={ownerName}
+							onChange={e => setOwnerName(e.target.value)}
+						/>
 					</div>
 					<div className={`${styles.modal__grid} grid`}>
+						<Field
+							label='Phone Number:'
+							placeholder='Phone Number'
+							type='text'
+							value={phoneNumber}
+							onChange={e => setPhoneNumber(e.target.value)}
+						/>
 						<div className='form__input-container flex flex--column'>
-							<p>Phone Number:</p>
-							<input
+							<label>Sex: </label>
+							<select
+								id='sex'
+								name='sex'
 								className='form__input'
-								type='text'
-								value={phoneNumber}
-								onChange={e => setPhoneNumber(e.target.value)}
-							/>
-						</div>
-						<div className='form__input-container flex flex--column'>
-							<p>Sex:</p>
-							<input
-								className='form__input'
-								type='text'
 								value={sex}
 								onChange={e => setSex(e.target.value)}
-							/>
+							>
+								<option value='' disabled>
+									Sex
+								</option>
+								<option value='Male' key='Male'>
+									Male
+								</option>
+								<option value='Female' key='Female'>
+									Female
+								</option>
+							</select>
 						</div>
 					</div>
 					<div className={`${styles.modal__grid} grid`}>
-						<div className='form__input-container flex flex--column'>
-							<p>Species:</p>
-							<input
-								className='form__input'
-								type='text'
-								value={species}
-								onChange={e => setSpecies(e.target.value)}
-							/>
-						</div>
-						<div className='form__input-container flex flex--column'>
-							<p>Age:</p>
-							<input
-								className='form__input'
-								type='text'
-								value={age}
-								onChange={e => setAge(e.target.value)}
-							/>
-						</div>
+						<Field
+							label='Species: '
+							placeholder='Species'
+							type='text'
+							value={species}
+							onChange={e => setSpecies(e.target.value)}
+						/>
+
+						<Field
+							label='Age: '
+							placeholder='Age'
+							type='text'
+							value={age}
+							onChange={e => setAge(e.target.value)}
+						/>
 					</div>
 					<div className={`${styles.modal__grid} grid`}>
-						<div className='form__input-container flex flex--column'>
-							<p>Hour:</p>
-							<input
-								className='form__input'
-								type='time'
-								value={hour}
-								onChange={e => setHour(e.target.value)}
-							/>
-						</div>
-						<div className='form__input-container flex flex--column'>
-							<p>Date:</p>
-							<input
-								className='form__input'
-								type='date'
-								value={date}
-								onChange={e => setDate(e.target.value)}
-							/>
-						</div>
+						<Field
+							label='Hour: '
+							placeholder='Hour'
+							type='time'
+							value={hour}
+							onChange={e => setHour(e.target.value)}
+						/>
+
+						<Field
+							label='Date: '
+							placeholder='Date'
+							type='date'
+							value={date}
+							onChange={e => setDate(e.target.value)}
+						/>
 					</div>
 					<p>Reason:</p>
 					<textarea
