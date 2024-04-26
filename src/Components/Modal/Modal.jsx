@@ -1,4 +1,5 @@
 import styles from './modal.module.css'
+import { Button } from '../../Components'
 
 export default function Modal({
 	event,
@@ -21,13 +22,11 @@ export default function Modal({
 
 				<h3 className={styles.modal__title}>{title}</h3>
 				<p className={styles.modal__description}>{subtitle}</p>
-				<button
-					className={`${styles.modal__button} button`}
-					type='submit'
+				<Button
+					title={message}
 					onClick={() => event()}
-				>
-					{message}
-				</button>
+					styles={`${styles.modal__button} button`}
+				/>
 			</div>
 		</div>
 	)

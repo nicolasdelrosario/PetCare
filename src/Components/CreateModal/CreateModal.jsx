@@ -1,7 +1,8 @@
 import styles from '../Modal/modal.module.css'
 import { useState } from 'react'
 import { toast } from 'sonner'
-import Field from '../Field/Field'
+import { Field, Button } from '../../Components'
+
 export default function CreateModal({
 	createNewAppointment,
 	activeModal,
@@ -175,9 +176,7 @@ export default function CreateModal({
 						onChange={e => setReason(e.target.value)}
 					></textarea>
 
-					<button className='button' type='submit'>
-						Create Appointment
-					</button>
+					<Button title='Create Appointment' />
 				</form>
 			</div>
 		</div>

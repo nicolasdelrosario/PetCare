@@ -1,4 +1,5 @@
 export { default as Field } from './Field'
+export { default as Button } from './Button'
 export { default as Navigation } from './Navigation'
 export { default as Modal } from './Modal'
 export { default as CreateModalButton } from './CreateModalButton'
