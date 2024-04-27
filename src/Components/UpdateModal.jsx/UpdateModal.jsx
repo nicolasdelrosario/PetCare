@@ -1,7 +1,7 @@
 import styles from '../Modal/modal.module.css'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
-import Field from '../Field/Field'
+import { Field, Button } from '../../Components'
 
 export default function UpdateModal({
 	updateAnAppointment,
@@ -185,7 +185,7 @@ export default function UpdateModal({
 						rows='3'
 					></textarea>
 
-					<button className='button'>Save Changes</button>
+					<Button title='Save Changes' />
 				</form>
 			</div>
 		</div>

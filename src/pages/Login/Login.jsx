@@ -3,6 +3,7 @@ import { useState } from 'react'
 import useLocalStorage from '../../hooks/useLocalStorage'
 import { toast } from 'sonner'
 import { Link, Redirect } from 'wouter'
+import { Field, Button } from '../../Components'
 
 function Login() {
 	const [username, setUsername] = useState('')
@@ -44,21 +45,21 @@ function Login() {
 					className={`${styles.form__login} flex flex--column`}
 					onSubmit={validateForm}
 				>
-					<label>Username</label>
-					<input
-						className={`${styles.form__input} ${styles.form__login_input}`}
-						placeholder='Username'
-						type='text'
+					<Field
+						label={'Username'}
+						placeholder={'Username'}
 						value={username}
 						onChange={e => setUsername(e.target.value)}
+						styles='form__input-lg'
 					/>
-					<label>Password</label>
-					<input
-						className={`${styles.form__input} ${styles.form__login_input}`}
-						placeholder='Password'
-						type='password'
+
+					<Field
+						label={'Password'}
+						placeholder={'Password'}
 						value={password}
+						type='password'
 						onChange={e => setPassword(e.target.value)}
+						styles='form__input-lg'
 					/>
 
 					<p className='mb-2'>
@@ -66,9 +67,7 @@ function Login() {
 						<Link to='/signup'> Sign up</Link>
 					</p>
 
-					<button className='button' type='submit'>
-						Sign in
-					</button>
+					<Button title='Sign in' styles='button' />
 				</form>
 			</div>
 		</section>
