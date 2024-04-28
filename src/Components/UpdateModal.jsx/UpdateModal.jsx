@@ -94,8 +94,9 @@ export default function UpdateModal({
 					name='x'
 					onClick={handleCloseModal}
 				></box-icon>
-				<h3 className={styles.modal__title}>Appointment Details</h3>
-				<form onSubmit={validateForm} className='flex flex--column'>
+
+				<form onSubmit={validateForm} className='form flex flex--column'>
+					<h3 className={styles.modal__title}>Appointment Details</h3>
 					<div className={`${styles.modal__grid} grid`}>
 						<Field
 							label='Pet&#39;s Name:'
