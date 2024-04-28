@@ -225,6 +225,11 @@ img {
 }
 
 /* form */
+.form {
+	margin: 0 auto;
+	max-width: 320px;
+}
+
 .form__input-container {
 	justify-content: center;
 	min-width: 50%;

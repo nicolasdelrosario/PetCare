@@ -16,10 +16,12 @@
 }
 
 .modal__content {
-	width: 500px;
+	max-width: 350px;
+	max-height: 100%;
+	overflow-y: auto;
 	position: relative;
 	background-color: var(--container-color);
-	padding: 4.5rem 2.5rem 2.5rem;
+	padding: 4.5rem 1.5rem 1.5rem;
 	border-radius: 1.5rem;
 }
 
@@ -66,6 +68,11 @@
 
 /* for medium devices */
 @media screen and (min-width: 768px) {
+	.modal__content {
+		max-width: 500px;
+		padding: 4.5rem 2.5rem 2.5rem;
+	}
+
 	.modal__grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
