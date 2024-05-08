@@ -1,15 +1,22 @@
-// import { NavLink } from 'react-router-dom'
+import { NavLink, NavLinkProps } from 'react-router-dom'
+import styles from './nav-item.module.css'
 
-// function NavItem({ to, children, activeStyle, onClick }) {
-// 	return (
-// 		<NavLink
-// 			to={to}
-// 			className={({ isActive }) => (isActive ? activeStyle : undefined)}
-// 			onClick={onClick}
-// 		>
-// 			{children}
-// 		</NavLink>
-// 	)
-// }
+interface INavItem extends NavLinkProps {}
 
-// export default NavItem
+function NavItem({ to, children, ...rest }: INavItem) {
+	return (
+		<NavLink
+			to={to}
+			className={({ isActive }) =>
+				isActive
+					? `${styles.nav__link} ${styles.active_link}`
+					: styles.nav__link
+			}
+			{...rest}
+		>
+			{children}
+		</NavLink>
+	)
+}
+
+export default NavItem

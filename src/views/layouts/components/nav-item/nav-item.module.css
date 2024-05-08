@@ -1,0 +1,5 @@
+.active-link,
+.nav__link:hover {
+	color: var(--title-color-dark);
+	border-bottom: 1px solid black;
+}

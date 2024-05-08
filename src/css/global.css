@@ -106,10 +106,6 @@ img {
 	display: grid;
 }
 
-.grid--columns-2 {
-	grid-template-columns: repeat(2, 1fr);
-}
-
 .place--center {
 	place-content: center;
 }
