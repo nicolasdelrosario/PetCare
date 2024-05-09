@@ -13,16 +13,32 @@ function Main() {
 						</h1>
 						<ul className={`${styles.home__list} flex flex--column`}>
 							<li>
-								<h3 className={styles.home__subtitle}>Efficient Scheduling at Your Fingertips</h3>
-								<span className={styles.home__text}>Optimize your appointment booking process with our easy-to-use interface designed for veterinary clinics.</span>
+								<h3 className={styles.home__subtitle}>
+									Efficient Scheduling at Your Fingertips
+								</h3>
+								<span className={styles.home__text}>
+									Optimize your appointment booking process with our easy-to-use
+									interface designed for veterinary clinics.
+								</span>
 							</li>
 							<li>
-								<h3 className={styles.home__subtitle}>Everything You Need to Manage Pet Care</h3>
-								<span className={styles.home__text}>From appointment scheduling to client management, handle all your administrative tasks in one integrated platform.</span>
+								<h3 className={styles.home__subtitle}>
+									Everything You Need to Manage Pet Care
+								</h3>
+								<span className={styles.home__text}>
+									From appointment scheduling to client management, handle all
+									your administrative tasks in one integrated platform.
+								</span>
 							</li>
 							<li>
-								<h3 className={styles.home__subtitle}>Seamless Integration, Simplified Operations</h3>
-								<span className={styles.home__text}>Our tools are built to integrate smoothly with your existing systems, ensuring that your clinic operates more efficiently than ever.</span>
+								<h3 className={styles.home__subtitle}>
+									Seamless Integration, Simplified Operations
+								</h3>
+								<span className={styles.home__text}>
+									Our tools are built to integrate smoothly with your existing
+									systems, ensuring that your clinic operates more efficiently
+									than ever.
+								</span>
 							</li>
 						</ul>
 					</div>

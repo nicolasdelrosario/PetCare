@@ -85,8 +85,8 @@ img {
 }
 
 .min--100 {
+	width: 100%;
 	min-height: 100vh;
-	min-width: 100vw;
 }
 
 /* layout */
@@ -112,6 +112,10 @@ img {
 
 .justify-i-center {
 	justify-items: center;
+}
+
+.justify-between {
+	justify-content: space-between;
 }
 
 .text--center {

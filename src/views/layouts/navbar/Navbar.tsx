@@ -5,7 +5,6 @@ import styles from './navbar.module.css'
 import menu from '../../../assets/icons/menu.svg'
 import close from '../../../assets/icons/close.svg'
 
-
 const Navbar = () => {
 	// Toggle menu
 	const [toggle, setToggle] = useState(false)
@@ -27,7 +26,11 @@ const Navbar = () => {
 							<NavItem to='/signup'>Signup</NavItem>
 						</li>
 					</ul>
-					<img src={close} className={styles.nav__close} onClick={() => setToggle(!toggle)} />
+					<img
+						src={close}
+						className={styles.nav__close}
+						onClick={() => setToggle(!toggle)}
+					/>
 				</div>
 
 				<div className={styles.nav__toggle} onClick={() => setToggle(!toggle)}>
